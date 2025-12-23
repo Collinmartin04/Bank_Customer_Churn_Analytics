@@ -1,56 +1,125 @@
-# Bank Customer Churn and Profitability Analytics
+# 🏦 Bank Customer Churn and Profitability Analytics
 
-## Overview
-This project analyzes retail banking customers to identify profitability drivers and churn risk using SQL and Power BI.
+## 📌 Project Overview
+This project analyzes retail banking customers to understand **profitability drivers** and **churn risk** using **MySQL** and **Power BI**.
 
-Using a normalized MySQL schema and rule-based churn scoring, the dashboard highlights high-value customers at risk of attrition and provides insights to support retention strategies.
+By designing a normalized SQL data model and applying **rule-based churn risk scoring**, the dashboards identify **high-value customers at risk of attrition** and surface insights to support data-driven retention strategies.
 
-## Tools Used
-- MySQL 8.0
-- Power BI Desktop
-- SQL (CTEs, views, joins)
-- DAX (measures and calculated columns)
+---
 
-## Data
-- Public bank churn dataset (Kaggle: Churn Modelling)
-- 10,000 customer records across demographics, products, balances, and churn outcomes
+## 🛠️ Tools & Technologies
+- **MySQL 8.0** – data modeling, transformations, analytical views  
+- **Power BI Desktop** – interactive dashboards and reporting  
+- **SQL** – joins, views, aggregations, business logic  
+- **DAX** – calculated columns and measures for KPIs and segmentation  
 
-## Data Model
-- Staging table for raw churn data
-- Dimension tables for customers and geography
-- SQL views for:
-  - customer profiles
-  - profitability estimation
-  - churn risk scoring
-  - high-value at-risk customers
+---
 
-## Key Metrics
-- Annual customer profit (fee + balance-based proxy – servicing cost)
-- Churn rate
-- Rule-based churn risk score
-- Profitability segments
+## 📊 Dataset
+- **Source:** Public bank churn dataset (Kaggle, *Churn Modelling*)
+- **Records:** 10,000 retail banking customers
+- **Features include:**
+  - Demographics (age, gender, geography)
+  - Account balance and salary
+  - Product ownership
+  - Activity status
+  - Historical churn outcome
 
-## Dashboards
-### Executive Overview
+---
+
+## 🗂️ Data Model
+The project uses a **bank-style analytical schema** built in MySQL.
+
+**Core components:**
+- **Staging table** for raw churn data
+- **Dimension tables**
+  - Customer
+  - Geography
+- **Analytical SQL views**
+  - Customer profile view
+  - Profitability estimation view
+  - Churn risk scoring view
+  - High-value at-risk customer view
+
+All business logic is implemented in SQL views to keep Power BI focused on visualization.
+
+---
+
+## 📐 Key Metrics & Logic
+- **Annual Customer Profit**
+  - Monthly account fee
+  - Balance-based revenue proxy
+  - Servicing and product costs
+- **Churn Rate**
+- **Rule-Based Churn Risk Score**
+  - Activity status
+  - Product count
+  - Tenure
+  - Balance presence
+  - Credit score
+- **Profitability Segments**
+  - Loss-Making
+  - Low Profit
+  - Medium Profit
+  - High Profit
+
+---
+
+## 📈 Dashboards
+
+### 🔹 Executive Overview
+High-level KPIs and trends for leadership decision-making.
+
 ![Executive Overview](screenshots/Executive_Overview.png)
 
-### Profitability and Segmentation
-![Segmentation](screenshots/Profitability_and_Segmentation.png)
+---
 
-### Churn Risk and Retention Actions
-![Churn Risk](screenshots/Churn_Risk_and_Retention_Actions.png)
+### 🔹 Profitability & Segmentation
+Customer value distribution and churn behavior across profit segments.
 
-## Key Insights
-- Medium and high profit customers contribute the majority of total profit
-- Churn risk increases significantly among low-profit and single-product customers
-- A subset of high-profit customers exhibit elevated churn risk and should be prioritized for retention outreach
+![Profitability and Segmentation](screenshots/Profitability_and_Segmentation.png)
 
-## Assumptions
-- Profitability is estimated using simplified fee and balance-based revenue proxies
-- Churn risk is rule-based for explainability
-- Dataset churn labels are treated as historical outcomes
+---
 
-## Next Steps
-- Add transaction-level data for behavioral churn signals
-- Incorporate predictive churn modeling
-- Simulate retention interventions and ROI
+### 🔹 Churn Risk & Retention Actions
+Drill-down analysis highlighting **high-value customers with elevated churn risk**.
+
+![Churn Risk and Retention Actions](screenshots/Churn_Risk_and_Retention_Actions.png)
+
+---
+
+## 💡 Key Insights
+- **Medium and high-profit customers generate the majority of total profit**
+- **Churn risk is significantly higher among low-profit and single-product customers**
+- A subset of **high-profit customers shows elevated churn risk**, making them prime candidates for targeted retention outreach
+
+---
+
+## ⚠️ Assumptions & Limitations
+- Profitability is estimated using simplified, explainable revenue and cost proxies
+- Churn risk scoring is **rule-based**, prioritizing transparency over predictive complexity
+- Churn labels are treated as historical outcomes provided by the dataset
+
+---
+
+## 🚀 Next Steps
+- Incorporate **transaction-level data** to capture behavioral churn signals
+- Introduce **predictive churn models** to complement rule-based scoring
+- Simulate **retention interventions** and estimate ROI impact
+
+---
+
+## 📁 Repository Structure
+```text
+bank-customer-churn-analytics/
+├── powerbi/
+│   └── bank_customer_churn_profitability.pbix
+├── sql/
+│   ├── 01_create_database.sql
+│   ├── 02_create_tables.sql
+│   └── 03_create_views.sql
+├── screenshots/
+│   ├── Executive_Overview.png
+│   ├── Profitability_and_Segmentation.png
+│   └── Churn_Risk_and_Retention_Actions.png
+└── README.md
