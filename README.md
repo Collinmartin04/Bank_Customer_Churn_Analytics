@@ -118,6 +118,8 @@ bank-customer-churn-analytics/
 │   ├── 01_create_database.sql
 │   ├── 02_create_tables.sql
 │   └── 03_create_views.sql
+├── raw_data/
+│   ├── Churn_Modelling.csv
 ├── screenshots/
 │   ├── Executive_Overview.png
 │   ├── Profitability_and_Segmentation.png
