@@ -35,7 +35,7 @@ Using a normalized MySQL schema and rule-based churn scoring, the dashboard high
 ![Executive Overview](screenshots/Executive_Overview.png)
 
 ### Profitability and Segmentation
-![Segmentation](screenshots/Profitability and Segmentation.png)
+![Segmentation](screenshots/Profitability_and_Segmentation.png)
 
 ### Churn Risk and Retention Actions
 ![Churn Risk](screenshots/Churn_Risk_and_Retention_Actions.png)
