@@ -123,3 +123,12 @@ bank-customer-churn-analytics/
 │   ├── Profitability_and_Segmentation.png
 │   └── Churn_Risk_and_Retention_Actions.png
 └── README.md
+```
+---
+
+## 📬 Contact
+If you have questions about this project or would like to discuss analytics, data, or BI opportunities, feel free to reach out.
+
+- **LinkedIn:** https://www.linkedin.com/in/collin-martin-6461482b5/
+- **Email:** collin.martinn04@gmail.com
+
